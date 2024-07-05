@@ -1,0 +1,40 @@
+img {
+    max-width: 500px;
+}
+
+.visualizar-vaga {
+    padding: 1rem;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        margin: 0;
+        padding: 0
+    }
+
+    h2 {
+        margin: 5px 0 0 0;
+        padding: 0;
+        color: #36454F;
+        font-weight: 500;
+    }
+
+    p {
+        margin: 5px 0 0 0;
+        padding: 0;
+    }
+
+    #action {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}

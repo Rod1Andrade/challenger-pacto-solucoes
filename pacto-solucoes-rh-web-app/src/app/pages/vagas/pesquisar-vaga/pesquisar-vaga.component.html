@@ -1,0 +1,40 @@
+<div>
+    <div class="header">
+        <div class="left">
+            <h1>Vagas em aberto</h1>
+            <small (click)="sair()">Sair</small>
+        </div>
+        <p-button label="Adicionar Vaga" [text]="true" (onClick)="navegarAdicionarNovaVaga()"  *ngIf="permissaoAdmin()" />
+    </div>
+
+    <div class="search-vagas">
+        <p-iconField iconPosition="left" class="p-icon-field">
+            <p-inputIcon styleClass="pi pi-search"></p-inputIcon>
+            <input type="text" pInputText placeholder="Buscar vaga" (keydown)="pesquisar($event)" [(ngModel)]="filtro">
+        </p-iconField>
+    </div>
+
+    <div class="vagas">
+        <p-card header="{{vaga?.titulo}}" *ngFor="let vaga of vagas">
+            <div class="card-vaga-local">
+                {{vaga.subtitulo}}
+            </div>
+            <div class="card-vaga-descricao">
+                {{vaga.descricao}}
+            </div>
+            <div class="card-vaga-actions">
+                <a [routerLink]="['visualizar', vaga.id]">detalhes</a>
+            </div>
+        </p-card>
+    </div>
+
+    <div class="paginator">
+        <p-paginator 
+            (onPageChange)="onPageChange($event)"
+            [first]="pagerModel.first"
+            [rows]="pagerModel.rows"
+            [totalRecords]="pagerModel.total"
+            [rowsPerPageOptions]="pagerModel.rowPerPageOptions"
+        ></p-paginator>
+    </div>
+</div>
