@@ -1,68 +1,47 @@
-# README: Pacto Soluções RH
+
+# Pacto Soluções RH
 
 Este repositório contém uma aplicação de RH Dockerizada, composta por um backend RESTful e um frontend Angular.
 
-## Pré-requisitos
+## Deploy
 
-Certifique-se de ter o Docker e o Docker Compose instalados na sua máquina.
+Para fazer o deploy desse projeto é necessário ter o docker e o docker compose instalado corretamente.
 
-- Docker: [Instalação do Docker](https://docs.docker.com/get-docker/)
-- Docker Compose: [Instalação do Docker Compose](https://docs.docker.com/compose/install/)
 
-## Rodando a aplicação
-
-1. Clone este repositório:
-
-   ```bash
-   git clone https://github.com/Rod1Andrade/challenger-pacto-solucoes
-   cd challenger-pacto-solucoes
-    ```
-
-2. Execute o Docker Compose para iniciar os serviços:
-
-   ```bash
-   docker-compose up --build
-    ```
-3. Acesse a aplicação frontend:
-
-    Abra seu navegador e vá para http://localhost:4200. Você deverá ver a interface do usuário da aplicação.
-
-4. API RESTful:
-
-    A API RESTful estará disponível em http://localhost:8080. Você pode acessar e testar os endpoints conforme necessário.
-
-## Acessos
-
-1. Usuários disponíveis
-
-Nome de usuário:
 ```bash
-usuario
-```
-Senha:
-```bash
-1234
+  git clone https://github.com/Rod1Andrade/challenger-pacto-solucoes.git
 ```
 
-Este usuário tem o perfil comum. Sendo capaz apenas de visualizar e de se inscrever nas vagas.
-
-Nome de usuário:
 ```bash
-admin
-```
-Senha:
-```bash
-1234
+  cd challenger-pacto-solucoes
 ```
 
-Este tem o perfil de admnistrador, pode criar vagas e editar. Mas, não pode se inscrever.
+```bash
+  docker-compose up --build
+```
 
-## Caso tenha problemas com o docker.
 
-Versões:
+## Usuários para teste
 
-- Java 17
-- Spring 3.3.1
-- Angular 17
-- Node 22.0.0
-- Postgres 14
+A aplicação é disponibilizada com alguns dados iniciais, dentre eles temos dois usuários, ambos com a senha 1234.
+
+```json
+{
+    "nome": "admin",
+    "senha": "1234"
+}
+```
+
+```json
+{
+    "nome": "usuario",
+    "senha": "1234"
+}
+```
+
+## Screenshots
+
+![image](https://github.com/Rod1Andrade/challenger-pacto-solucoes/assets/51142291/84139892-665d-4990-bd7e-776e76957bce)
+
+![image](https://github.com/Rod1Andrade/challenger-pacto-solucoes/assets/51142291/2e53e88e-975e-4d9f-ba25-b936fa1c14e7)
+
