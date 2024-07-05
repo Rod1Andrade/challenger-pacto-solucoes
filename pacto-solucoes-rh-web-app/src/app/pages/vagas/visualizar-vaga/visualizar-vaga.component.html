@@ -1,0 +1,18 @@
+<div class="visualizar-vaga">
+    <div class="action">
+        <i class="pi pi-arrow-circle-left" style="font-size: 2rem; cursor: pointer;" (click)="voltar()"></i>
+        <p-button label="Inscrever-se" [text]="true" *ngIf="usuarioComum()" (onClick)="inscrever($event)" [disabled]="jaInscrito" [pTooltip]="jaInscrito ? 'Você já se inscreveu para esta vaga!' : ''" />
+        <p-button label="Editar" [text]="true" *ngIf="vaga?.permissaoEditar" (onClick)="editar()"/>
+    </div>
+    <hr />
+    <div class="header mt-1">
+        <h1>{{vaga?.titulo}}</h1>
+        <h2>{{vaga?.subtitulo}}</h2>
+        <p>{{vaga?.descricao}}</p>
+    </div>
+    <div class="content" [innerHTML]="vaga?.texto">
+        
+    </div>
+</div>
+
+<p-confirmDialog />

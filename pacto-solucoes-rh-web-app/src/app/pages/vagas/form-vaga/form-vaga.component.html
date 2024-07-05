@@ -1,0 +1,41 @@
+<div>
+    <div class="router-action">
+        <i class="pi pi-arrow-circle-left" style="font-size: 2rem; cursor: pointer;" (click)="voltar()"></i>
+    </div>
+    <hr>
+    <div class="header">
+        <h1>{{ vagaId ? 'Editar Vaga' : 'Anunciar Nova Vaga' }}</h1>
+    </div>
+
+    <div class="content">
+        <form [formGroup]="formulario">
+            <div class="flex flex-column gap-2 mb-4">
+                <label for="titulo">Título</label>
+                <input type="text" pInputText aria-describedby="titulo-help" formControlName="titulo" [ngClass]="{ 'ng-invalid ng-dirty': formulario.get('titulo')?.invalid && formulario.get('titulo')?.touched}">
+                <small id="titulo-help">
+                    Ex: Desenvolvedor PL Java & Angular
+                </small>
+            </div>
+            <div class="flex flex-column gap-2 mb-4">
+                <label for="descricao">Subtítulo</label>
+                <input type="text" pInputText aria-describedby="subtitulo-help" formControlName="subtitulo" [ngClass]="{ 'ng-invalid ng-dirty': formulario.get('subtitulo')?.invalid && formulario.get('subtitulo')?.touched}">
+                <small id="subtitulo-help">
+                    Ex: Goiânia | Interno
+                </small>
+            </div>
+            <div class="flex flex-column gap-2 mb-4">
+                <label for="descricao">Descrição</label>
+                <input type="text" pInputText aria-describedby="descricao-help" formControlName="descricao" [ngClass]="{ 'ng-invalid ng-dirty': formulario.get('descricao')?.invalid && formulario.get('descricao')?.touched}">
+                <small id="descricao-help">
+                    Descrever pequenos detalhes da vaga, texto chamativo.
+                </small>
+            </div>
+            <div class="flex flex-column gap-2 mt-5">
+                <p-editor [style]="{height: '300px'}" formControlName="texto" [ngClass]="{ 'ng-invalid ng-dirty': formulario.get('texto')?.invalid && formulario.get('texto')?.touched}"></p-editor>
+            </div>
+        </form>
+    </div>
+    <div class="action mt-2">
+        <p-button [label]="vagaId ? 'Salvar' : 'Anunciar'" [text]="true" (onClick)="submit()"></p-button>
+    </div>
+</div>

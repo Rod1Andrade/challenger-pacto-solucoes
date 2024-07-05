@@ -1,0 +1,31 @@
+<div id="login">
+    <div id="container">
+        <div id="leftPanel">
+            <div id="leftPanelImg">
+                <img src="assets/imgs/logo_label.jpg" alt="">
+            </div>
+        </div>
+        <div id="rightPanel">
+            <div id="panelHeader">
+                <h1>Entrar</h1>
+                <h3>Aqui fazemos acontecer, venha fazer parte.</h3>
+            </div>
+            <div id="panelForm">
+                <form id="form-login" [formGroup]="formulario">
+                    <div class="label-input">
+                        <label for="nomeUsuario">Nome de usuário</label>
+                        <input type="text" name="nomeUsuario" id="nomeUsuario" formControlName="nome">
+                    </div>
+                    <div class="label-input">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha" formControlName="senha">
+                    </div>
+                    <div id="action">
+                        <button (click)="entrar()">Entrar</button>
+                        <p>Ainda não possui uma conta? <a href="#">Clique aqui.</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

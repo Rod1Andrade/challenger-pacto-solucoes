@@ -37,7 +37,7 @@ services:
     networks:
       - dev-network
     build:
-      context: ./pacto-solucoes-rh-web
+      context: ./pacto-solucoes-rh-web-app
       dockerfile: Dockerfile
     container_name: pacto-solucoes-rh-web
     ports:

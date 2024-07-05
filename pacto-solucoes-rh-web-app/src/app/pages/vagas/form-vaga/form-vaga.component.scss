@@ -1,0 +1,22 @@
+.header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content {
+    padding: 0 2rem;
+}
+
+.action {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.router-action {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+}
