@@ -31,6 +31,32 @@ Certifique-se de ter o Docker e o Docker Compose instalados na sua máquina.
 
     A API RESTful estará disponível em http://localhost:8080. Você pode acessar e testar os endpoints conforme necessário.
 
+## Acessos
+
+1. Usuários disponíveis
+
+Nome de usuário:
+```bash
+usuario
+```
+Senha:
+```bash
+1234
+```
+
+Este usuário tem o perfil comum. Sendo capaz apenas de visualizar e de se inscrever nas vagas.
+
+Nome de usuário:
+```bash
+admin
+```
+Senha:
+```bash
+1234
+```
+
+Este tem o perfil de admnistrador, pode criar vagas e editar. Mas, não pode se inscrever.
+
 ## Caso tenha problemas com o docker.
 
 Versões:
