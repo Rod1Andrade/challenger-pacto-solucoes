@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS TB_VAGAS_APLICADA_USUARIO (
+    id_vaga INTEGER NOT NULL,
+    id_usuario INTEGER NOT NULL,
+    PRIMARY KEY(id_vaga, id_usuario),
+    FOREIGN KEY (id_vaga) REFERENCES TB_VAGAS (id),
+    FOREIGN KEY (id_usuario) REFERENCES TB_USUARIOS (id)
+);

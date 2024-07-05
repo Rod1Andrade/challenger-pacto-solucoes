@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS TB_VAGAS (
+    id SERIAL PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    subtitulo VARCHAR(255) NOT NULL,
+    descricao VARCHAR(255) NOT NULL,
+    texto text NOT NULL,
+    criado_por INTEGER NOT NULL,
+
+    FOREIGN KEY (criado_por) REFERENCES TB_USUARIOS (id)
+);

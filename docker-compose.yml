@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:14.2
+    networks:
+      - dev-network
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_POSTGRES_DB: postgres
+      POSTGRES_MAX_CONNECTIONS: 200
+  
+  pacto-solucoes-rh-rest:
+    depends_on:
+      - postgres
+    networks:
+      - dev-network
+    build:
+      context: ./pacto-solucoes-rh-rest
+      dockerfile: Dockerfile
+    container_name: pacto-solucoes-rh-rest
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_JPA_HIBERNATE_DIALECT: org.hibernate.dialect.PostgreSQLDialect
+      SPRING_FLYWAY_ENABLED: "true"
+      SPRING_FLYWAY_BASELINE_ON_MIGRATE: "true"
+      SPRING_APPLICATION_NAME: pacto-solucoes-rh
+      LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY: DEBUG
+    ports:
+      - "8080:8080"
+  pacto-solucoes-rh-web:
+    depends_on:
+      - pacto-solucoes-rh-rest
+    networks:
+      - dev-network
+    build:
+      context: ./pacto-solucoes-rh-web
+      dockerfile: Dockerfile
+    container_name: pacto-solucoes-rh-web
+    ports:
+      - "4200:4200"
+networks:
+  dev-network:
+    driver: bridge
