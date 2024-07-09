@@ -24,6 +24,7 @@ Para fazer o deploy desse projeto é necessário ter o docker e o docker compose
 ## Usuários para teste
 
 A aplicação é disponibilizada com alguns dados iniciais, dentre eles temos dois usuários, ambos com a senha 1234.
+Não foi implementado o registro de usuário em decorrência do tempo.
 
 ```json
 {
